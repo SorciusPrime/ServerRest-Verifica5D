@@ -27,7 +27,7 @@ public class DaFareService {
             throws IllegalArgumentException {
         
         // Controllo se i parametri passati sono validi
-                if (parametriValidi(giocata, numero) == false) {
+                if (parametriValidi(giocata, numero) == "parametri non validi") {
             throw new IllegalArgumentException("Operatore non può essere vuoto");
         }
         
@@ -41,16 +41,20 @@ public class DaFareService {
     }
 
     // Metodo di validazione dei parametri (da implementare)
-    private static boolean parametriValidi(String giocata, int numero)
+    private static String parametriValidi(String giocata, int numero)
     {
        if (giocata.toUpperCase() == "DISPARI" || 
-            giocata.toUpperCase() == "PARI"){
+            giocata.toUpperCase() == "PARI") 
+       {
            
            if (numero < 37 && numero > -1){
-               return true;
-           }
+               
+               if (numero % 2 == 0){
+                   return "numero pari";
+               }else return "numero disparo";
+           } else return "paramentri non validi";
            
-        }
-        return false;
+        }else return "parametri non validi";
+
     }
 }
