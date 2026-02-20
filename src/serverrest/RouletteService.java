@@ -8,7 +8,7 @@ package serverrest;
  *
  * @author delfo
  */
-public class DaFareService {
+public class RouletteService {
     
     /**
      * Esegue l'operazione matematica richiesta
@@ -27,7 +27,7 @@ public class DaFareService {
             throws IllegalArgumentException {
         
         // Controllo se i parametri passati sono validi
-                if (parametriValidi(giocata, numero) == "parametri non validi") {
+                if (parametriValidi(giocata, numero) == "paramentri non validi") {
             throw new IllegalArgumentException("Operatore non può essere vuoto");
         }
         

@@ -8,40 +8,45 @@ package serverrest;
  *
  * @author delfo
  */
-public class DaFareRequest {
+public class RouletteResponse {
+
     String giocata;
     Integer numero;
+    String vittoria;
     // Costruttore vuoto necessario per GSON
-    public DaFareRequest() {
+    public RouletteResponse() {
     }
     
-    // Costruttore con parametri  
-   public DaFareRequest(String giocata, Integer numero) {
+    // Costruttore con parametri
+    public RouletteResponse(String giocata, Integer numero, String vittoria) {
         this.giocata = giocata;
         this.numero = numero;
-    }
+        this.vittoria = vittoria;
+    }  
+    
     // Getter
-   public String getGiocata() {
+    public String getGiocata() {
         return giocata;
     }
 
     public void setGiocata(String giocata) {
         this.giocata = giocata;
     }
-    
-    // Setter
+
     public Integer getNumero() {
         return numero;
     }
-
+    
+    // Setter
     public void setNumero(Integer numero) {
         this.numero = numero;
     }
 
-    // ToString
+    public String getVittoria() {
+        return vittoria;
+    }
 
-    @Override
-    public String toString() {
-        return "DaFareRequest{" + "giocata=" + giocata + ", numero=" + numero + '}';
+    public void setVittoria(String vittoria) {
+        this.vittoria = vittoria;
     }
 }
