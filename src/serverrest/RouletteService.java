@@ -48,7 +48,9 @@ public class RouletteService {
        {
            
            if (numero < 37 && numero > -1){
-               
+               if (numero == 0){
+                   return "numero 0";
+               }
                if (numero % 2 == 0){
                    return "numero pari";
                }else return "numero disparo";

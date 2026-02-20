@@ -15,6 +15,7 @@ import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
+import static serverrest.RouletteService.numero;
 
 
 
@@ -47,12 +48,14 @@ public class RouletteGetHandler implements HttpHandler {
             // Validazione parametri
             if (validazioneParametri(parametri)) {
                 inviaErrore(exchange, 400, 
-                    "Parametri mancanti. Necessari: operando1, operando2, operatore");
+                    "Parametri mancanti. Necessari: operando1, operando2");
                 return;
             }
             
             // Parsing dei valori
-             
+            String num = (parametri.get(numero));
+            String giocata = (parametri.get(giocata));
+            
             
             // Esegue la logica di calcolo
             double risultato = RouletteService.logicaDiCalcolo();
