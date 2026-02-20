@@ -20,7 +20,6 @@ public class DaFareRequest {
         this.giocata = giocata;
         this.numero = numero;
     }
-    
     // Getter
    public String getGiocata() {
         return giocata;
