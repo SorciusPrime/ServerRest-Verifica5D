@@ -15,6 +15,7 @@ import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
+import static serverrest.RouletteService.giocata;
 import static serverrest.RouletteService.numero;
 
 
@@ -53,8 +54,8 @@ public class RouletteGetHandler implements HttpHandler {
             }
             
             // Parsing dei valori
-            String num = (parametri.get(numero));
-            String giocata = (parametri.get(giocata));
+            
+            
             
             
             // Esegue la logica di calcolo
@@ -80,7 +81,7 @@ public class RouletteGetHandler implements HttpHandler {
 
     // Validazione dei parametri (da implementare)
     private boolean validazioneParametri(Map<String, String> parametri) {
-        
+        String num = (parametri.get(numero));
         return false;
     }
     
