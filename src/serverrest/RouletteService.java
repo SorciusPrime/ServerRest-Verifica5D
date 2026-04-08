@@ -4,59 +4,54 @@
  */
 package serverrest;
 
+import java.util.Objects;
+
 /**
  *
  * @author delfo
  */
 public class RouletteService {
     
-    /**
-     * Esegue l'operazione matematica richiesta
-     * 
-     * @param 
-     * @param 
-     * @param 
-     * @return 
-     * @throws IllegalArgumentException se ...
-     */
-    
-    static String giocata;
-    static String numero;
-    
-    public static double logicaDiCalcolo() 
+    public static double CalcolaVittoria(String giocataFatta, String numero) 
             throws IllegalArgumentException {
+            Integer numeroEstratto = Integer.parseInt(numero);
         
         // Controllo se i parametri passati sono validi
-                if (parametriValidi(giocata, numero) == "paramentri non validi") {
+                if (Objects.equals(parametriValidi(giocataFatta, numeroEstratto), "paramentri non validi")) {
             throw new IllegalArgumentException("Operatore non può essere vuoto");
         }
         
-        try {
-            
-        } catch (Exception e) {
-            throw new IllegalArgumentException(
-                    "Opzione non valida. Opzione deve essere DA FARE");
+        Boolean vittoria;
+        
+        switch (giocataFatta.toUpperCase().trim()){
+            case "PARI":
+                vittoria = numeroEstratto %2 != 0;
+                break;
+            case "DISPARI":
+                vittoria = numeroEstratto %2 == 0;
+                break;
+            default:
+                throw new IllegalArgumentException("giocata non amessa" + giocataFatta);
         }
         return 0; // Placeholder, da sostituire con il risultato della logica di calcolo
     }
 
     // Metodo di validazione dei parametri (da implementare)
-    private static String parametriValidi(String giocata, int numero)
+    private static Boolean parametriValidi(String giocata, Integer numero)
     {
-       if (giocata.toUpperCase() == "DISPARI" || 
-            giocata.toUpperCase() == "PARI") 
-       {
-           
-           if (numero < 37 && numero > -1){
-               if (numero == 0){
-                   return "numero 0";
-               }
-               if (numero % 2 == 0){
-                   return "numero pari";
-               }else return "numero disparo";
-           } else return "paramentri non validi";
-           
-        }else return "parametri non validi";
-
+       if (giocata == null || numero == null){
+           return false;
+       }
+       
+       if (giocata.trim().isEmpty()){
+           return false;
+       }
+       
+       if (numero < 0 || numero > 36) {
+           return false;
+       }
+       
+       String message = giocata.toUpperCase();
+       return message.equals("PARI")|| message.equals("DISPARI");
     }
 }

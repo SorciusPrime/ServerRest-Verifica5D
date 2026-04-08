@@ -12,19 +12,21 @@ public class RouletteResponse {
 
     String giocata;
     String numero;
-    String vittoria;
+    Boolean vittoria;
     // Costruttore vuoto necessario per GSON
     public RouletteResponse() {
     }
     
     // Costruttore con parametri
-    public RouletteResponse(String giocata, Integer numero, String vittoria) {
+
+    public RouletteResponse(String giocata, String numero, Boolean vittoria) {
         this.giocata = giocata;
         this.numero = numero;
         this.vittoria = vittoria;
-    }  
+    }
     
     // Getter
+
     public String getGiocata() {
         return giocata;
     }
@@ -33,20 +35,20 @@ public class RouletteResponse {
         this.giocata = giocata;
     }
 
-    public Integer getNumero() {
+    public String getNumero() {
         return numero;
     }
-    
-    // Setter
-    public void setNumero(Integer numero) {
+
+    public void setNumero(String numero) {
         this.numero = numero;
     }
 
-    public String getVittoria() {
+    public Boolean getVittoria() {
         return vittoria;
     }
 
-    public void setVittoria(String vittoria) {
+    public void setVittoria(Boolean vittoria) {
         this.vittoria = vittoria;
     }
+    
 }
