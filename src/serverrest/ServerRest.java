@@ -34,7 +34,8 @@ public class ServerRest {
             HttpServer server = HttpServer.create(new InetSocketAddress(porta), 0);
             
             // Registra gli handler per gli endpoint
-           
+            server.createContext("/api/roulette/paridispari/get", new RouletteGetHandler());
+            server.createContext("/api/roulette/paridispari/post", new RoulettePostHandler());
             
             // Endpoint di benvenuto
             server.createContext("/", ServerRest::gestisciBenvenuto);
