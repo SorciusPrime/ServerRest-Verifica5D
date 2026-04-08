@@ -12,7 +12,7 @@ import java.util.Objects;
  */
 public class RouletteService {
     
-    public static double CalcolaVittoria(String giocataFatta, String numero) 
+    public static Boolean CalcolaVittoria(String giocataFatta, String numero) 
             throws IllegalArgumentException {
             Integer numeroEstratto = Integer.parseInt(numero);
         
@@ -33,7 +33,7 @@ public class RouletteService {
             default:
                 throw new IllegalArgumentException("giocata non amessa" + giocataFatta);
         }
-        return 0; // Placeholder, da sostituire con il risultato della logica di calcolo
+        return vittoria; // Placeholder, da sostituire con il risultato della logica di calcolo
     }
 
     // Metodo di validazione dei parametri (da implementare)
