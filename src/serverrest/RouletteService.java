@@ -25,10 +25,10 @@ public class RouletteService {
         
         switch (giocataFatta.toUpperCase().trim()){
             case "PARI":
-                vittoria = numeroEstratto %2 != 0;
+                vittoria = numeroEstratto %2 != 0 && numeroEstratto != 0;
                 break;
             case "DISPARI":
-                vittoria = numeroEstratto %2 == 0;
+                vittoria = numeroEstratto %2 == 0 && numeroEstratto != 0;
                 break;
             default:
                 throw new IllegalArgumentException("giocata non amessa" + giocataFatta);
