@@ -50,8 +50,8 @@ public class ServerRest {
             System.out.println("Porta: " + porta);
             System.out.println();
             System.out.println("Endpoint disponibili:");
-            System.out.println("  - POST: http://localhost:" + porta + "/api/v1/roulette/post");
-            System.out.println("  - GET:  http://localhost:" + porta + "/api/v1/roulette/get");
+            System.out.println("  - POST: http://localhost:" + porta + "/api/roulette/paridispari/post");
+            System.out.println("  - GET:  http://localhost:" + porta + "/api/roulette/paridispari/get");
             System.out.println("  - Info: http://localhost:" + porta + "/");
             System.out.println();
             System.out.println();

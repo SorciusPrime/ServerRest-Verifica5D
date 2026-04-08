@@ -21,7 +21,7 @@ public class RouletteService {
      */
     
     static String giocata;
-    static int numero;
+    static String numero;
     
     public static double logicaDiCalcolo() 
             throws IllegalArgumentException {
