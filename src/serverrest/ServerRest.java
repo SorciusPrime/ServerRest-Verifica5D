@@ -84,8 +84,8 @@ public class ServerRest {
         info.put("endpoints", endpoints);
         
         Map operatori = new HashMap<>();
-        operatori.put("DISPARI", "DISPARI");
-        operatori.put("PARI", "PARI");
+        operatori.put("giocata", "PARI o DISPARI");
+        operatori.put("numero", "numero da 0 a 36");
         info.put("operatori_supportati", operatori);
         
         String jsonRisposta = gson.toJson(info);

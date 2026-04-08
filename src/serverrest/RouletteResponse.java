@@ -11,7 +11,7 @@ package serverrest;
 public class RouletteResponse {
 
     String giocata;
-    Integer numero;
+    String numero;
     String vittoria;
     // Costruttore vuoto necessario per GSON
     public RouletteResponse() {
